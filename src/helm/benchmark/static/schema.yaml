@@ -1790,6 +1790,8 @@ run_groups:
       - hellaswag
       - openbookqa
       - truthful_qa
+      - BIG-bench
+      - gsm
 
   - name: information_retrieval
     display_name: Information retrieval
@@ -1869,6 +1871,7 @@ run_groups:
       - truthful_qa
       - mmlu
       - wikifact
+      - BIG-bench
 
   - name: reasoning
     display_name: Reasoning
@@ -1888,6 +1891,7 @@ run_groups:
       - legal_support
       - entity_data_imputation
       - entity_matching
+      - BIG-bench
 
   - name: harms
     display_name: Harms
@@ -2210,6 +2214,23 @@ run_groups:
       when: "?"
       language: English
 
+  - name: BIG-bench
+    display_name: BIG-bench
+    short_display_name: BIG-bench
+    description: Collaborative benchmark intended to probe large language models and extrapolate their future capabilities. https://github.com/google/BIG-bench
+    category: Targeted evaluations
+    metric_groups:
+      - accuracy
+    environment:
+      main_name: exact_match
+      main_split: test
+    taxonomy:
+      task: question answering
+      what: "?"
+      who: "?"
+      when: "?"
+      language: English
+ 
   - name: mmlu
     display_name: MMLU (Massive Multitask Language Understanding)
     short_display_name: MMLU
